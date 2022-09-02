@@ -1,8 +1,9 @@
 const { DataTypes } = require("sequelize");
 
 const conn = require("src/adapters/orm");
+const User = require("./user")
 
-const Users = conn.define(
+const CreditRequest = conn.define(
     "CreditRequest",
     {
         id: {
@@ -15,7 +16,7 @@ const Users = conn.define(
             allowNull: false,
             unique: true
         },
-        uf:{
+        uf: {
             type: DataTypes.INTEGER,
             allowNull: true,
         },
@@ -23,7 +24,7 @@ const Users = conn.define(
             type: DataTypes.INTEGER,
             allowNull: true,
         },
-        date:{
+        date: {
             type: DataTypes.DATE,
             allowNull: true,
         },
@@ -41,6 +42,13 @@ const Users = conn.define(
     }
 );
 
+CreditRequest.hasMany(User, {
+
+    sourceKey: 'fk_user_id',
+    foreignKey: {
+        name: 'id'
+    }
+});
 
 
-module.exports = Users;
+module.exports = CreditRequest;

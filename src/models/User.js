@@ -30,5 +30,4 @@ const Users = conn.define(
 );
 
 
-
 module.exports = Users;
