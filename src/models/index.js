@@ -1,3 +1,4 @@
-const Book = require("src/models/Book");
+const User = require("src/models/user");
+const CreditRequest = require("src/models/credit_request")
 
-module.exports = { Book };
+module.exports = { User, CreditRequest };

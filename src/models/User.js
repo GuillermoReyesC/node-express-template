@@ -1,59 +1,34 @@
-const {DataTypes } = require("sequelize");
+const { DataTypes } = require("sequelize");
 
-const { conn } = require("src/adapters");
- 
-const user  = conn.define("user", {
-    user_id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
+const conn = require("src/adapters/orm");
+
+const Users = conn.define(
+    "User",
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
         },
-    user_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-        validate: {
-            notEmpty: true,
-            len: [1, 255]
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
         },
-    },
-    user_lastName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: true,
-            len: [1, 255]
-            },
-    },
-    user_rut: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: true,
-            len: [1, 255]
+        last_name: {
+            type: DataTypes.STRING,
+            allowNull: true,
         },
+        rut: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        }
     },
-    user_email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-        validate: {
-            notEmpty: true,
-            isEmail: true,
-            len: [1, 255]
-            },
-    },
-    credit_value: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        defaultValue: 0,
-        validate: {
-            notEmpty: true,
-            isInt: true,
-            len: [1, 255]
-        },
+    {
+        tableName: "users",
     }
-});
+);
 
-module.exports = user;
-    
+
+
+module.exports = Users;
