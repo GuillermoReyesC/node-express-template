@@ -1,4 +1,5 @@
 const getUF = require('./getUF')
-const getCLP = require('./getCLP')
+const formatCLP = require('./formatCLP')
+const paymentPlan = require('./paymentPlan')
 
-module.exports = { getUF, getCLP }
+module.exports = { getUF, formatCLP, paymentPlan }
