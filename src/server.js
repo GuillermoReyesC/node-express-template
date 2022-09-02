@@ -4,3 +4,9 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server listening in port https://localhost:${PORT}`);
 });
+
+/* app.get('/', function (req, res) {
+  res.sendFile(__dirname+"/src/views/index.html")
+
+}); */
+
