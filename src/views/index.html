@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>mindicador</title>
+</head>
+<body>
+    <div class="section">
+      <div class="section center-align">
+          <h3>mi indicador</h3>
+          <p>prueba de api de <a href="https://mindicador.cl/">mindicador.cl</a></p>  
+      
+      </div>
+    </div>
+    <div class="container">
+      <form  action="coin-values" method="post">
+      <div class="col-md-4">
+        <div class="form-group">
+            <label >ingrese monto a consultar <i>expresado en pesos</i>  :</label>
+            <input type="number" value="" class="form-control" name="valor" placeholder="ej: 1000">
+            <button class="btn red" >UF</button>
+        </div>
+        <br/>
+        <div class="col-md-4">
+          <div class="form-group">
+              <label >ingrese monto a consultar <i>expresado en U.F.</i>  :</label>
+              <input type="text" value="" class="form-control" name="valor" placeholder="ej: 3">
+              <button class="btn blue" >pesos</button>
+
+          </div>
+      </form>
+    </div>
+    
+  
+    <div class="section">
+      <h4>resultados</h4>
+      <div class="col-md-4">
+        <p>el monto en pesos es : {{cant / uf}}</p>
+      </div>
+      
+      <div class="col-md-4">
+        <p>el monto en U.F. es : </p>
+      </div>
+      
+      <div class="col-md-4">
+        <p>el Valor actual de la UF hoy es: $ 33851.69</p>
+        
+      </div>
+
+        <div class="section">
+          <button href="#" type="button" class="btn btn-primary"> solicitud de Credito </button>
+        </div>
+
+
+  
+  
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

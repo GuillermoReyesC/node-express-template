@@ -5,6 +5,14 @@ este es un template que contiene una estructura basica y generica de los directo
 asi ahondamos en la recursividad, evitamos redundancia de codigo, estandarizamos el desarrollo entre los
 developers y evitamos errores de directorios al desarrollar.
 
+## instalacion
+
+descargar repositorio
+
+ejecutar npm i
+
+ejecutar npm run dev
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
