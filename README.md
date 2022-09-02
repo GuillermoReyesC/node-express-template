@@ -10,7 +10,9 @@
     - [Run service](#run-service)
     - [Test and coverage](#test-and-coverage)
 - [End Points](#end-points)
-    - [New credit simulation](#new-credit-simulation)
+    - [New credit simulation](#new-credit-simulation-post)
+    - [get clp from uf](#get-clp-from-uf-get)
+    - [get uf from clp](#get-uf-from-clp-get)
 
 # Introduction
 
@@ -131,8 +133,11 @@ http://localhost:3000/api/badges/clp/1
 
 ## get UF from CLP [GET]
 
-http://localhost:3000/api/badges/uf/:quantity
-
+```shell
+   {
+	http://localhost:3000/api/badges/uf/:quantity
+    } 
+```
 
 
 ### put the CLP quantity
