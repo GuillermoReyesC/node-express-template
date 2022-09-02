@@ -103,9 +103,33 @@ http://localhost:3000/api/simulator/credit
 }
 ```
 
+## Edit credit [PUT]
 
+```shell
+http://localhost:3000/api/simulator/credit/:id
+```
 
-## get clp from U.F. [GET]
+## Delete credit by id [DELETE]
+
+```shell
+http://localhost:3000/api/simulator/credit/:id
+```
+
+## Put the id of credit in url [GET]
+
+ej:
+
+http://localhost:3000/api/simulator/credit/56
+
+## response
+
+```shell
+{}
+```
+
+###
+
+## Get clp from U.F. [GET]
 
 ```shell
 http://localhost:3000/api/badges/clp/:uf
