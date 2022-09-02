@@ -5,9 +5,9 @@ const { getUF } = require('src/utils')
 
 const retrieveCLP = (req, res, next) => {
   try {
-    const { amount } = req.params
+    const { quantity } = req.params
     const UF = getUF()
-    const result = amount / UF
+    const result = quantity / UF
     res.status(200).json({ UF: result })
   } catch (error) {
     next(ApiError.badRequest(error.message))
