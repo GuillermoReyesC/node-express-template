@@ -11,6 +11,9 @@
     - [Test and coverage](#test-and-coverage)
 - [End Points](#end-points)
     - [New credit simulation](#new-credit-simulation-post)
+    - [Get credit](#get-credit-get)
+    - [Edit Credit](#edit-Credit-put)
+    - [Delete credit](#delete-credit-by-id-delete)
     - [get clp from uf](#get-clp-from-uf-get)
     - [get uf from clp](#get-uf-from-clp-get)
 
@@ -103,11 +106,94 @@ http://localhost:3000/api/simulator/credit
 }
 ```
 
+## Get Credit [GET]
+
+```shell
+http://localhost:3000/api/simulator/credit/:id
+```
+
+## Put the id in url to find a credit
+
+ej: 
+http://localhost:3000/api/simulator/credit/6
+
+## response 
+
+```json
+    {
+	"id": 6,
+	"fk_user_id": 4,
+	"uf": 500,
+	"dues": 22,
+	"date": "2022-09-05T00:00:00.000Z",
+	"createdAt": "2022-09-02T18:30:41.123Z",
+	"updatedAt": "2022-09-02T23:36:38.526Z",
+	"Users": [
+		{
+			"id": 4,
+			"name": "jhon",
+			"last_name": "doe",
+			"rut": "33.333.333-3",
+			"createdAt": "2022-09-02T18:30:41.100Z",
+			"updatedAt": "2022-09-02T18:30:41.100Z"
+		}
+	]
+}
+```
+
+
+
+
 ## Edit credit [PUT]
 
 ```shell
 http://localhost:3000/api/simulator/credit/:id
 ```
+
+## Put the id of credit in url to edit & send the data [PUT]
+ej:
+
+http://localhost:3000/api/simulator/credit/6
+
+## send edited data
+ ej:
+ 
+```shell
+{
+  dues:22
+}
+```
+
+## response 
+
+
+```json
+  {
+	"credit": {
+		"id": 6,
+		"fk_user_id": 4,
+		"uf": 500,
+		"dues": 22,
+		"date": "2022-09-05T00:00:00.000Z",
+		"createdAt": "2022-09-02T18:30:41.123Z",
+		"updatedAt": "2022-09-02T23:36:38.526Z"
+	},
+	"clp": "$16.926.000",
+	"duesValue": "$769.364",
+	"payment_plan": [
+		"2022-10-05",
+		"2022-11-05",
+		"2022-12-05",
+		"2023-01-05",
+		"2023-02-05",
+		"2023-03-05",
+		"2023-04-05",
+    ...
+	]
+}
+
+```
+
 
 ## Delete credit by id [DELETE]
 
