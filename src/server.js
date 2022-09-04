@@ -5,12 +5,5 @@ app.listen(PORT, () => {
   console.log(`Server listening in port https://localhost:${PORT}`);
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(__dirname+"/views/index.html")
 
-});
-
-app.get('/solicitud', function (req, res) {
-  res.sendFile(__dirname+"/views/creditRequest.html")
-})
 
